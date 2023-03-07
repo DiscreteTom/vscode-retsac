@@ -13,7 +13,7 @@
     "grammars": [
       {
         "path": "./syntaxes/retsac.tmLanguage.json",
-        "scopeName": "definition.retsac",
+        "scopeName": "source.definition.retsac",
         "injectTo": [
           "source.ts"
         ]
