@@ -16,13 +16,13 @@
           "name": "punctuation.separator.key-value.ts"
         },
         "2": {
-          "name": "punctuation.definition.string.template.begin.ts"
+          "name": "string.template.ts"
         }
       },
       "end": "(`)\\s*((,)|(\\}))",
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.string.template.end.ts"
+          "name": "string.template.ts"
         },
         "3": {
           "name": "punctuation.separator.comma.ts"
