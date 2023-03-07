@@ -102,7 +102,7 @@
     },
     "grammar": {
       "match": "\\w+",
-      "name": "variable.other.constant.retsac"
+      "name": "constant.other.grammar.retsac"
     },
     "border": {
       "match": "([\\(\\)])",
