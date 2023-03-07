@@ -1,0 +1,23 @@
+{
+  "name": "vscode-retsac",
+  "displayName": "vscode-retsac",
+  "description": "VSCode extension for retsac.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/retsac.tmLanguage.json",
+        "scopeName": "definition.retsac",
+        "injectTo": [
+          "source.ts"
+        ]
+      }
+    ]
+  }
+}

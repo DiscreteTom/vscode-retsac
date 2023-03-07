@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "definition.retsac",
+  "injectionSelector": "L:meta.objectliteral",
+  "name": "",
+  "patterns": [
+    {
+      "include": "#grammar-rule-definition"
+    }
+  ],
+  "repository": {
+    "grammar-rule-definition": {
+      "begin": "(:)\\s*(`)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.separator.key-value.ts"
+        },
+        "2": {
+          "name": "punctuation.definition.string.template.begin.ts"
+        }
+      },
+      "end": "(`)\\s*((,)|(\\}))",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.string.template.end.ts"
+        },
+        "3": {
+          "name": "punctuation.separator.comma.ts"
+        },
+        "4": {
+          "name": "punctuation.definition.block.ts"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#literal-double"
+        },
+        {
+          "include": "#literal-single"
+        },
+        {
+          "include": "#grammar-rule-reference"
+        },
+        {
+          "include": "#named-grammar"
+        },
+        {
+          "include": "#grammar"
+        },
+        {
+          "include": "#border"
+        },
+        {
+          "include": "#meta"
+        }
+      ]
+    },
+    "literal-double": {
+      "name": "string.quoted.double.retsac",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.retsac",
+          "match": "\\\\."
+        },
+        {
+          "name": "string.quoted.double.retsac",
+          "match": "[^\\\"]"
+        }
+      ]
+    },
+    "literal-single": {
+      "name": "string.quoted.single.retsac",
+      "begin": "'",
+      "end": "'",
+      "patterns": [
+        {
+          "name": "constant.character.escape.retsac",
+          "match": "\\\\."
+        },
+        {
+          "name": "string.quoted.single.retsac",
+          "match": "[^']"
+        }
+      ]
+    },
+    "named-grammar": {
+      "name": "meta.grammar.retsac",
+      "match": "(\\w+)(@)(\\w+)",
+      "captures": {
+        "1": {
+          "name": "comment.line.double-slash.retsac"
+        },
+        "2": {
+          "name": "keyword.operator.new.retsac"
+        },
+        "3": {
+          "name": "variable.other.constant.retsac"
+        }
+      }
+    },
+    "grammar": {
+      "match": "\\w+",
+      "name": "variable.other.constant.retsac"
+    },
+    "border": {
+      "match": "([\\(\\)])",
+      "name": "punctuation.separator.retsac"
+    },
+    "meta": {
+      "match": "[\\+\\*\\?\\|]",
+      "name": "keyword.operator.quantifier.retsac"
+    }
+  }
+}
