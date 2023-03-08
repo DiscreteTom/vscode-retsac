@@ -1,89 +1,49 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "scopeName": "source.definition.retsac",
-  "injectionSelector": "L:meta.objectliteral",
+  "injectionSelector": "L:string.template.ts -punctuation.definition.string.template -meta.template.expression",
   "name": "",
   "patterns": [
     {
-      "include": "#grammar-rule-definition"
+      "include": "#literal-double"
+    },
+    {
+      "include": "#literal-single"
+    },
+    {
+      "include": "#grammar-rule-reference"
+    },
+    {
+      "include": "#named-grammar"
+    },
+    {
+      "include": "#grammar"
+    },
+    {
+      "include": "#border"
+    },
+    {
+      "include": "#meta"
     }
   ],
   "repository": {
-    "grammar-rule-definition": {
-      "begin": "(:)\\s*(`)",
-      "beginCaptures": {
-        "1": {
-          "name": "punctuation.separator.key-value.ts"
-        },
-        "2": {
-          "name": "string.template.ts"
-        }
-      },
-      "end": "(`)\\s*((,)|(\\}))",
-      "endCaptures": {
-        "1": {
-          "name": "string.template.ts"
-        },
-        "3": {
-          "name": "punctuation.separator.comma.ts"
-        },
-        "4": {
-          "name": "punctuation.definition.block.ts"
-        }
-      },
-      "patterns": [
-        {
-          "include": "#literal-double"
-        },
-        {
-          "include": "#literal-single"
-        },
-        {
-          "include": "#grammar-rule-reference"
-        },
-        {
-          "include": "#named-grammar"
-        },
-        {
-          "include": "#grammar"
-        },
-        {
-          "include": "#border"
-        },
-        {
-          "include": "#meta"
-        }
-      ]
-    },
     "literal-double": {
       "name": "string.quoted.double.retsac",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape.retsac",
-          "match": "\\\\."
-        },
-        {
-          "name": "string.quoted.double.retsac",
-          "match": "[^\\\"]"
+      "match": "\"((\\\\.)|[^\"])*\"",
+      "captures": {
+        "2": {
+          "name": "constant.character.escape.retsac"
         }
-      ]
+      }
     },
     "literal-single": {
       "name": "string.quoted.single.retsac",
-      "begin": "'",
-      "end": "'",
-      "patterns": [
-        {
-          "name": "constant.character.escape.retsac",
-          "match": "\\\\."
-        },
-        {
-          "name": "string.quoted.single.retsac",
-          "match": "[^']"
+      "match": "'((\\\\.)|[^'])*'",
+      "captures": {
+        "2": {
+          "name": "constant.character.escape.retsac"
         }
-      ]
+      }
     },
     "named-grammar": {
       "name": "meta.grammar.retsac",
