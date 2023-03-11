@@ -1,5 +1,7 @@
 # vscode-retsac
 
+![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/DiscreteTom.vscode-retsac?style=flat-square)
+
 VSCode extension for [retsac](https://github.com/DiscreteTom/retsac).
 
 Provide syntax highlighter for retsac grammar definition strings in TypeScript files:
