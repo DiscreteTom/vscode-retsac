@@ -2,7 +2,17 @@
 # yarn lockfile v1
 
 
+"@discretetom/r-compose@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/@discretetom/r-compose/-/r-compose-0.2.1.tgz#b2182ad9a08539a6fd9b8bb404748de4f150a28a"
+  integrity sha512-gbwmisMxRJrVuFhC2EqG5ibeesRmnMBF26Ou+CkQva5BqLj0E8OcOEOYZgSC1jqbNz5xyY/dMxs1t0DqaaM+oA==
+
 retsac@^0.14.0:
   version "0.14.0"
   resolved "https://registry.npmmirror.com/retsac/-/retsac-0.14.0.tgz#d9321446bd67df96b0b1be3e9f25bcf4a2fa9a5f"
   integrity sha512-ZoXa7bjNsai/BwLWPd1/o5GiOyx+VmfdlQqJzESn6uPOfDvfi6xhUirfWIhrsIHZC20UvR6A4KitpMHvVCv5qg==
+
+tmlb@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/tmlb/-/tmlb-0.1.1.tgz#102278765e433edfc6e2c4e20523b7c1d7689271"
+  integrity sha512-xjPE4rDytn9LF/TuQTI2hNvUmruSbPpp5ycPuUYCP1VR47CVzpGEfAd8ahi2xp5Fg9iqlyyqmTOG7TRcxDBYvQ==

@@ -26,6 +26,8 @@
     ]
   },
   "devDependencies": {
-    "retsac": "^0.14.0"
+    "@discretetom/r-compose": "^0.2.1",
+    "retsac": "^0.14.0",
+    "tmlb": "^0.1.1"
   }
 }
