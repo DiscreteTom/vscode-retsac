@@ -1,53 +1,22 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "scopeName": "source.definition.retsac",
-  "injectionSelector": "L:string.template.ts -punctuation.definition.string.template -meta.template.expression",
-  "name": "",
   "patterns": [
     {
-      "include": "#literal-double"
+      "name": "constant.other.grammar.retsac",
+      "match": "\\w+\\b(?!@)"
     },
     {
-      "include": "#literal-single"
-    },
-    {
-      "include": "#grammar-rule-reference"
-    },
-    {
-      "include": "#named-grammar"
-    },
-    {
-      "include": "#grammar"
-    },
-    {
-      "include": "#border"
-    },
-    {
-      "include": "#meta"
-    }
-  ],
-  "repository": {
-    "literal-double": {
       "name": "string.quoted.double.retsac",
-      "match": "\"((\\\\.)|[^\"])*\"",
-      "captures": {
-        "2": {
-          "name": "constant.character.escape.retsac"
-        }
-      }
+      "match": "\"(?:[^\"])*\"(?!@)"
     },
-    "literal-single": {
+    {
       "name": "string.quoted.single.retsac",
-      "match": "'((\\\\.)|[^'])*'",
-      "captures": {
-        "2": {
-          "name": "constant.character.escape.retsac"
-        }
-      }
+      "match": "'(?:[^'])*'(?!@)"
     },
-    "named-grammar": {
+    {
       "name": "meta.grammar.retsac",
-      "match": "(\\w+)(@)(\\w+)",
+      "match": "((?:\\w+|\"(?:[^\"])*\"|'(?:[^'])*'))(@)(\\w+)(?!@)",
       "captures": {
         "1": {
           "name": "comment.line.double-slash.retsac"
@@ -60,17 +29,18 @@
         }
       }
     },
-    "grammar": {
-      "match": "\\w+",
-      "name": "constant.other.grammar.retsac"
+    {
+      "name": "keyword.other.retsac",
+      "match": "\\|"
     },
-    "border": {
-      "match": "([\\(\\)])",
-      "name": "punctuation.separator.retsac"
+    {
+      "name": "keyword.operator.quantifier.retsac",
+      "match": "(?:\\?|\\*|\\+)"
     },
-    "meta": {
-      "match": "[\\+\\*\\?\\|]",
-      "name": "keyword.operator.quantifier.retsac"
+    {
+      "name": "variable.other.constant.retsac",
+      "match": "(?:\\(|\\))"
     }
-  }
+  ],
+  "injectionSelector": "L:string.template.ts -punctuation.definition.string.template -meta.template.expression"
 }
