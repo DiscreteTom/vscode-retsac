@@ -24,5 +24,8 @@
         ]
       }
     ]
+  },
+  "devDependencies": {
+    "retsac": "^0.14.0"
   }
 }
